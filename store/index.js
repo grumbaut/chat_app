@@ -10,19 +10,6 @@ const store = createStore(reducers);
 
 let navigate;
 
-export const login = (credentials, navigation) => {
-  socket.emit('newUser', credentials);
-  navigate = navigation.navigate;
-};
-
-export const openChat = users => {
-  socket.emit('chat', users);
-};
-
-export const sendMessage = (text, sender, receiver) => {
-  socket.emit('message', { text, sender, receiver });
-};
-
 socket.on('priorMessages', messages => {
   store.dispatch(gotMessages(messages));
 });
@@ -41,6 +28,19 @@ socket.on('newUser', user => {
 socket.on('incomingMessage', message => {
   store.dispatch(gotNewMessage(message));
 });
+
+export const login = (credentials, navigation) => {
+  socket.emit('newUser', credentials);
+  navigate = navigation.navigate;
+};
+
+export const openChat = users => {
+  socket.emit('chat', users);
+};
+
+export const sendMessage = (text, sender, receiver) => {
+  socket.emit('message', { text, sender, receiver });
+};
 
 export default store;
 export * from './users';

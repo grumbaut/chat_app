@@ -1,7 +1,7 @@
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { connect } from 'react-redux';
-import { openChat, sendMessage } from './store';
+import { openChat, sendMessage } from '../store';
 
 class Chat extends React.Component {
   constructor(props) {

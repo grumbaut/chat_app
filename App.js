@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { createStackNavigator } from 'react-navigation';
 
-import Login from './Login';
-import Users from './Users';
-import Chat from './Chat';
+import Login from './components/Login';
+import Users from './components/Users';
+import Chat from './components/Chat';
 
 export default class App extends React.Component {
   render() {
