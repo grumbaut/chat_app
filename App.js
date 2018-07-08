@@ -18,9 +18,15 @@ export default class App extends React.Component {
 }
 
 const RootStack = createStackNavigator({
-  Login: Login,
-  Users: Users,
-  Chat: Chat
+  Login: {
+    screen: Login
+  },
+  Users: {
+    screen: Users
+  },
+  Chat: {
+    screen: Chat
+  }
 }, {
   initialRouteName: 'Login',
   navigationOptions: {
